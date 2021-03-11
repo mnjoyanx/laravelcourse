@@ -21,13 +21,10 @@
         </style>
     </head>
     <body class="antialiased">
-       {{ $okay }}
+       @foreach ($all_users as $user)
+           {{ $user->name }}
+       @endforeach
 
-       <form method="POST" action="/send">
-        @csrf
-        <input type="text" name="name">
-        <input type="location" name="location">
-           <button type="submit">send</button>
-       </form>
+
     </body>
 </html>
